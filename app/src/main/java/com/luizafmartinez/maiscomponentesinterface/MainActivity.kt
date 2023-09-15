@@ -32,7 +32,5 @@ class MainActivity : AppCompatActivity() {
         btnClique.setOnClickListener {
             Toast.makeText(this, "Olá", Toast.LENGTH_SHORT).show()
         }*/
-
-        
     }
 }
