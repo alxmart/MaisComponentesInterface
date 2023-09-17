@@ -61,4 +61,22 @@
         app:srcCompat="@drawable/ic_adicionar_foto_24"
         app:tint="#C6C6C6" />
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabExtended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:text="SALVAR"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/design_default_color_error"
+        app:icon="@drawable/ic_salvar_24"
+        app:iconPadding="20dp"
+        app:iconTint="#FEFDFD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#3DDC84"
+        app:strokeWidth="5dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
