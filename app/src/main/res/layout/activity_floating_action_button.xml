@@ -7,14 +7,52 @@
     tools:context=".FloatingActionButtonActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAlerta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:tint="#C6C6C6"
+        app:backgroundTint="#767676"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fabCamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_alerta_24"
+        app:tint="#C6C6C6" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabBotao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
-        app:backgroundTint="?android:attr/colorEdgeEffect"
+        android:contentDescription="Add button"
+        app:backgroundTint="@color/design_default_color_secondary"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_adicionar_24" />
+        app:rippleColor="@color/design_default_color_primary"
+        app:srcCompat="@drawable/ic_adicionar_24"
+        app:tint="#FFFFFF" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:tint="#C6C6C6"
+        app:backgroundTint="#767676"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fabBotao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_adicionar_foto_24"
+        app:tint="#C6C6C6" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
