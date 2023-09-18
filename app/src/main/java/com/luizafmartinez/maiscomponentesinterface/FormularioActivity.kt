@@ -14,16 +14,37 @@ class FormularioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        with (binding) {
+        with(binding) {
 
             btnEnviar.setOnClickListener {
-                checkbox()
+                //checkbox()
             }
-        }
 
+            cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
+                val resultado = if (isChecked) "Sim" else "Não"
+                binding.textResultado.text = "valor selecionado: $resultado"
+            }
+
+           /* cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
+                var textLabel = if (cbConfirmacao.isChecked)
+                    "Sim, desejo receber emails"
+                else
+                    "Não , prefiro não receber emails"
+                cbConfirmacao.text = textLabel
+            }*/
+
+
+            /*cbConfirmacao.setOnClickListener {
+                val selecionado = binding.cbConfirmacao.isChecked
+                val resultado = if (selecionado) "Sim" else "Não"
+                binding.textResultado.text = "valor selecionado: $resultado"
+            }*/
+        }
     }
+
     private fun checkbox() {
         val selecionado = binding.cbConfirmacao.isChecked
-        binding.textResultado.text = "valor selecionado: $selecionado"
+        val resultado = if (selecionado) "Sim" else "Não"
+        binding.textResultado.text = "valor selecionado: $resultado"
     }
 }
