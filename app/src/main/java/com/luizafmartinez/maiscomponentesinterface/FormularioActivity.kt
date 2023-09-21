@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.luizafmartinez.maiscomponentesinterface.databinding.ActivityFormularioBinding
@@ -23,13 +24,14 @@ class FormularioActivity : AppCompatActivity() {
                 //checkbox()
                 //radioButton()
                 //switchToggle()
-                exibirSnackBar(view)
+                //exibirSnackBar(view)
                 //Snackbar precisa de uma View
                 /*Snackbar.make(
                    view,
                    "Alteração efetuada com sucesso",
                    Snackbar.LENGTH_LONG
                 ).show()*/
+                caixaDialogAlerta()
 
             }
 
@@ -56,13 +58,43 @@ class FormularioActivity : AppCompatActivity() {
                  cbConfirmacao.text = textLabel
              }*/
 
-
             /*cbConfirmacao.setOnClickListener {
                 val selecionado = binding.cbConfirmacao.isChecked
                 val resultado = if (selecionado) "Sim" else "Não"
                 binding.textResultado.text = "valor selecionado: $resultado"
             }*/
         }
+    }
+
+    private fun caixaDialogAlerta() {
+
+        val alertBuilder = AlertDialog.Builder(this)
+
+        alertBuilder.setTitle("Confirmar exclusão do item")
+
+        alertBuilder.setMessage("Tem certeza que quer remover ?")
+
+        alertBuilder.setNegativeButton("Cancelar") { dialog, posicao ->
+            Toast.makeText(this, "Cancelar ($posicao)", Toast.LENGTH_SHORT).show()
+            //dialog.dismiss()
+        }
+
+        alertBuilder.setPositiveButton("Remover") { dialog, posicao ->
+            Toast.makeText(this, "Remover ($posicao)", Toast.LENGTH_SHORT).show()
+            //dialog.dismiss()
+        }
+
+        alertBuilder.setCancelable(false) //Usuario tem que clicar em CAncelar ou Remover   alertBuilder.setNeutralButton()
+
+        alertBuilder.setNeutralButton("ajuda") { dialog, posicao ->
+            Toast.makeText(this, "Ajuda ($posicao)", Toast.LENGTH_SHORT).show()
+        }
+
+        alertBuilder.setIcon(R.drawable.ic_alerta_24)
+
+        val alertDialog = alertBuilder.create()
+
+        alertDialog.show()
     }
 
     private fun exibirSnackBar(view: View) {
@@ -96,8 +128,6 @@ class FormularioActivity : AppCompatActivity() {
                 android.R.color.holo_orange_dark
             )
         )
-
-
 
         snackBar.show()
     }

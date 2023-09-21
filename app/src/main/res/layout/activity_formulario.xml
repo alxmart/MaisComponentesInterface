@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Digite seu e-mail"
-            android:inputType="text" />
+            android:inputType="text"
+            android:minHeight="48dp" />
 
         <RadioGroup
             android:id="@+id/rgSexo"
@@ -58,6 +59,7 @@
             android:id="@+id/switchNotificacoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="Ativar notificações"
             android:thumbTint="#0D2FEF"
             android:trackTint="#E91E63" />
