@@ -67,8 +67,27 @@ class FormularioActivity : AppCompatActivity() {
     }
 
     private fun caixaDialogAlerta() {
+        AlertDialog.Builder(this)
+            .setTitle("Confirmar exclusão do item")
+            .setMessage("Tem certeza que quer remover ?")
+            .setNegativeButton("Cancelar") { dialog, posicao ->
+                Toast.makeText(this, "Cancelar ($posicao)", Toast.LENGTH_SHORT).show()
+                //dialog.dismiss()
+            }
+            .setPositiveButton("Remover") { dialog, posicao ->
+                Toast.makeText(this, "Remover ($posicao)", Toast.LENGTH_SHORT).show()
+                //dialog.dismiss()
+            }
+            .setNeutralButton("ajuda") { dialog, posicao ->
+            Toast.makeText(this, "Ajuda ($posicao)", Toast.LENGTH_SHORT).show()
+        }
+            .setIcon(R.drawable.ic_alerta_24)
+            .setCancelable(false) //Usuario tem que clicar em Cancelar ou Remover
+            .create()
+            .show()
 
-        val alertBuilder = AlertDialog.Builder(this)
+       /*
+       val alertBuilder = AlertDialog.Builder(this)
 
         alertBuilder.setTitle("Confirmar exclusão do item")
 
@@ -130,6 +149,7 @@ class FormularioActivity : AppCompatActivity() {
         )
 
         snackBar.show()
+        */
     }
 
     private fun switchToggle() {
