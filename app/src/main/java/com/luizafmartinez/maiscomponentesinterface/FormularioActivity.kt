@@ -18,20 +18,35 @@ class FormularioActivity : AppCompatActivity() {
 
             btnEnviar.setOnClickListener {
                 //checkbox()
+                //radioButton()
+                //switchToggle()
+                exibirSnackBar()
+
+
             }
 
-            cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
+            //switchNotificacoes.setOnClickListener {
+            /*
+            toggleAtivo.setOnClickListener {
+
+            }
+            toggleAtivo.setOnCheckedChangeListener { buttonView, isChecked ->
+
+            }
+            */
+
+            /*cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
                 val resultado = if (isChecked) "Sim" else "Não"
                 binding.textResultado.text = "valor selecionado: $resultado"
-            }
-
-           /* cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
-                var textLabel = if (cbConfirmacao.isChecked)
-                    "Sim, desejo receber emails"
-                else
-                    "Não , prefiro não receber emails"
-                cbConfirmacao.text = textLabel
             }*/
+
+            /* cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
+                 var textLabel = if (cbConfirmacao.isChecked)
+                     "Sim, desejo receber emails"
+                 else
+                     "Não , prefiro não receber emails"
+                 cbConfirmacao.text = textLabel
+             }*/
 
 
             /*cbConfirmacao.setOnClickListener {
@@ -42,9 +57,38 @@ class FormularioActivity : AppCompatActivity() {
         }
     }
 
+    private fun exibirSnackBar() {
+
+
+    }
+
+    private fun switchToggle() {
+
+        val switchMarcado = binding.switchNotificacoes.isChecked
+        val toggleMarcado = binding.toggleAtivo.isChecked
+
+        val texto = "Switch: $switchMarcado toggle: $toggleMarcado"
+        binding.textResultado.text = texto
+    }
+
+    private fun radioButton() {
+
+        val masculino = binding.rbMasculino.isChecked
+        //binding.textResultado.text = if (masculino) "Masculino" else "Feminino"
+
+        val idItemSelecionado = binding.rgSexo.checkedRadioButtonId
+        binding.textResultado.text = when( idItemSelecionado ) {
+            R.id.rbMasculino -> "Masculino"
+            R.id.rbFeminino -> "Feminino"
+            else -> "Nada selecionado"
+        }
+        binding.rgSexo.clearCheck()
+    }
     private fun checkbox() {
+
         val selecionado = binding.cbConfirmacao.isChecked
         val resultado = if (selecionado) "Sim" else "Não"
         binding.textResultado.text = "valor selecionado: $resultado"
     }
+
 }
