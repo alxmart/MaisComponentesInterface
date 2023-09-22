@@ -3,6 +3,7 @@ package com.luizafmartinez.maiscomponentesinterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -19,6 +20,8 @@ class FormularioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        spinnerExibicao()
+
         with(binding) {
             btnEnviar.setOnClickListener { view ->
                 //checkbox()
@@ -31,7 +34,8 @@ class FormularioActivity : AppCompatActivity() {
                    "Alteração efetuada com sucesso",
                    Snackbar.LENGTH_LONG
                 ).show()*/
-                caixaDialogAlerta()
+                //caixaDialogAlerta()
+                spinnerSelecionarItem()
 
             }
 
@@ -65,6 +69,34 @@ class FormularioActivity : AppCompatActivity() {
             }*/
         }
     }
+
+    private fun spinnerSelecionarItem() {
+
+        val itemSelecionado = binding.spinnerCategorias.selectedItem
+        val itemPosicao = binding.spinnerCategorias.selectedItemPosition
+
+        if ( itemPosicao == 0) {
+            binding.textResultado.text = "Selecione um item"
+        } else {
+            binding.textResultado.text =
+                "Selecionado: $itemSelecionado - Pos: $itemPosicao"
+        }
+    }
+
+
+    private fun spinnerExibicao() {
+
+        val categorias = listOf(
+            "Selecione uma categoria:",
+            "Eletrônicos", "Roupas", "Móveis", "Sapatos"
+        )
+        binding.spinnerCategorias.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            categorias
+        )
+    }
+
 
     private fun caixaDialogAlerta() {
         AlertDialog.Builder(this)
