@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MaisComponentesInterface</string>
+
+    <string-array name="categorias">
+        <item> Selecione uma categoria</item>
+        <item> Eletrônicos</item>
+        <item> Roupas</item>
+        <item> Casa &amp; Construção</item>
+        <item> Sapatos</item>
+    </string-array>
 </resources>
