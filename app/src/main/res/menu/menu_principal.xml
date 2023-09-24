@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_adicionar"
+        android:icon="@drawable/ic_adicionar_foto_24"
+        android:title="Adicionar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_pesquisar"
+        android:icon="@drawable/ic_pesquisa_24"
+        android:title="Pesquisar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_configuracoes"
+        android:title="Configurações" />
+    <item
+        android:id="@+id/item_sair"
+        android:title="Sair" />
+</menu>
