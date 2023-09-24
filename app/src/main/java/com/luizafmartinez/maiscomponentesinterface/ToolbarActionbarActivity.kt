@@ -6,16 +6,37 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuProvider
+import com.luizafmartinez.maiscomponentesinterface.databinding.ActivityToolbarActionbarBinding
 
 class ToolbarActionbarActivity : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityToolbarActionbarBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_toolbar_actionbar)
+        setContentView( binding.root )
+
+        inicializarToolbar()
+
 
         //supportActionBar?.hide()
-        inicializarActionBar()
+        //inicializarActionBar()
     }
+
+    private fun inicializarToolbar() {
+
+        binding.tbPrincipal.title = "YouTube"
+        binding.tbPrincipal.setTitleTextColor(
+            ContextCompat.getColor(this, R.color.white)
+        )
+        //binding.tbPrincipal.subtitle = "Mais detalhes"
+        setSupportActionBar( binding.tbPrincipal )
+    }
+
 
     private fun inicializarActionBar() {
 
