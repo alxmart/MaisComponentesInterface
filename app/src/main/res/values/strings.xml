@@ -1,5 +1,5 @@
 <resources>
-<!-- <string name="app_name">MaisComponentesInterface</string> -->
+    <!-- <string name="app_name">MaisComponentesInterface</string> -->
     <string name="app_name">YouTube</string>
 
     <string-array name="categorias">
